@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  mage_pipeline:
+    build: .
+    environment:
+      - MAGE_DATABASE_DIR=/app/.mage_data
+      - MAGE_APP_PORT=6789
+    ports:
+      - "6789:6789"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
